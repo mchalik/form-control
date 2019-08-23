@@ -7,6 +7,7 @@ fio.addEventListener('keyup', () => {
    console.log(event.target.value);
     fetch();
     let url = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/fio';
+    let url2 = 'https://cleaner.dadata.ru/api/v1/clean/name\n';
     const API_KEY = '094e0b373b850837a7f70c90899afc2cdf780966';
     fetch(url, {
         method: 'POST', // или 'PUT'
