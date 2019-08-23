@@ -9,63 +9,132 @@
     <title>Document</title>
 </head>
 <body class="page">
-<section>
+<section class="step">
     <h1 class="step-title">Шаг 1 из 2 | Личная информация</h1>
     <form>
         <div class="form-wrap">
             <div class="input-wrap">
                 <label class="input-label">
                     <span class="input-name">Фамилия Имя Отчество</span>
-                    <input type="text">
+                    <input type="text" class="input">
                 </label>
             </div>
             <div class="input-wrap">
                 <label class="input-label">
                     <span class="input-name">Дата рождения</span>
-                    <input type="text">
+                    <input type="text" class="input">
                 </label>
             </div>
             <div class="input-wrap">
-                <label class="input-label">
-                    <span class="input-name">Почта</span>
-                    <input type="text">
-                </label>
+                <div class="input-name">
+                    <label for="email" class="input-label">
+                        Почта
+                    </label>
+                    <span class="input-help">на этот адрес мы пришлём страховой полис</span>
+                </div>
+                <input type="email" name="email" id="email" class="input">
             </div>
         </div>
         <h2 class="form-title">Паспортные данные</h2>
         <div class="form-wrap">
             <div class="input-wrap">
-                <label class="input-label">
-                    <span class="input-name">Серия и номер</span>
-                    <input type="text">
-                </label>
+                <div class="input-name">
+                    <label for="passport_series_number" class="input-label">
+                        Серия и номер
+                    </label>
+                    <span class="input-help">только паспорт РФ</span>
+                </div>
+                <input type="text" name="passport_series_number" id="passport_series_number" class="input">
             </div>
             <div class="input-wrap">
                 <label class="input-label">
                     <span class="input-name">Кем выдан</span>
-                    <input type="text">
+                    <input type="text" class="input" placeholder="Заполните точно как в паспорте">
                 </label>
             </div>
             <div class="input-wrap">
                 <label class="input-label">
                     <span class="input-name">Когда выдан</span>
-                    <input type="text">
+                    <input type="text" class="input">
                 </label>
             </div>
             <div class="input-wrap">
                 <label class="input-label">
                     <span class="input-name">Код подразделения</span>
-                    <input type="text">
+                    <input type="text" class="input" placeholder="000-000">
                 </label>
             </div>
         </div>
-        <h2 class="form-title">Фото документов</h2>
-        <div class="form-wrap">
-            <input type="file">
-            <input type="file">
-            <input type="file">
+        <div class="file-form-wrap">
+            <div class="file-form-wrap__desc clearfix">
+                <h2 class="form-title d-inline">Фото документов</h2>
+                <span class="input-help">jpg, png, pdf, не больше 40 мб</span>
+            </div>
+            <div class="file-form-wrap__main">
+                <div class="file-inputs-wrap">
+                    <label for="passport1" class="file-label">Паспорт, 2-3 стр.</label>
+                    <label for="passport2" class="file-label">Паспорт, 19 стр.</label>
+                    <label for="passport3" class="file-label">Фото с паспортом</label>
+                    <input type="file" name="passport1" id="passport1" accept=".jpg, .pdf, .png" class="sr-only file-input">
+                    <input type="file" name="passport2" id="passport2" accept=".jpg, .pdf, .png" class="sr-only file-input">
+                    <input type="file" name="passport3" id="passport3" accept=".jpg, .pdf, .png" class="sr-only file-input">
+                </div>
+                <div class="file-form-wrap__caption caption">
+                    Мы надеждно храним и защищаем ваши личные данные и не передаем их третьим лицам
+                </div>
+            </div>
         </div>
-        <button type="submit" class="button">Далее</button>
+        <button type="submit" class="step__button button">Далее</button>
+    </form>
+</section>
+
+<section class="step">
+    <h1 class="step-title">Шаг 2 из 2 | О квартире</h1>
+    <form>
+        Мы составим договор аренды: в нем не будет упоминания залога, но будет пункт о страховке
+        <div class="form-wrap form-wrap--flexible">
+            <div class="input-wrap input-wrap--address">
+                <label class="input-label">
+                    <span class="input-name">Адрес: город, улица, дом, квартира</span>
+                    <input type="text" class="input">
+                </label>
+            </div>
+            <div class="input-wrap input-wrap--price">
+                <label class="input-label">
+                    <span class="input-name">Стоимость аренды</span>
+                    <input type="text" class="input">
+                </label>
+            </div>
+            <div class="form-wrap__caption caption input-wrap--price-caption">
+                Стоимость
+                страховки
+                <strong class="d-block nowrap">440₽/мес</strong>
+                (платит арендатор)
+            </div>
+        </div>
+        <div class="file-form-wrap">
+            <div class="file-form-wrap__desc">
+                <h2 class="form-title d-inline">Фото документов</h2>
+                <span class="input-help">jpg, png, pdf, не больше 40 мб</span>
+            </div>
+            <div class="file-form-wrap__main">
+                <div class="file-form-wrap__caption caption">
+                    Мы надеждно храним и защищаем ваши личные данные и не передаем их третьим лицам
+                </div>
+                <div class="file-inputs-wrap">
+                    <label for="passport1" class="file-label">Паспорт, 2-3 стр.</label>
+                    <label for="passport2" class="file-label">Паспорт, 19 стр.</label>
+                    <label for="passport3" class="file-label">Фото с паспортом</label>
+                    <input type="file" name="passport1" accept=".jpg, .pdf, .png" class="sr-only file-input">
+                    <input type="file" name="passport2" accept=".jpg, .pdf, .png" class="sr-only file-input">
+                    <input type="file" name="passport3" accept=".jpg, .pdf, .png" class="sr-only file-input">
+                </div>
+                <div class="file-form-wrap__caption caption">
+                    Мы надеждно храним и защищаем ваши личные данные и не передаем их третьим лицам
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="step__button button">Далее</button>
     </form>
 </section>
 </body>
