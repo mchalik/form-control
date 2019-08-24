@@ -1,8 +1,11 @@
 $primary-color: #4285F4;
 $primary-color-lighten: rgba($primary-color, .50);
+
 $secondary-color: #FF7373;
+
 $default-color: #979797;
 $default-color-lighten: rgba($default-color, .50);
+
 $font-sm: 13px;
 $font-md: 18px;
 $font-lg: 25px;
@@ -26,6 +29,7 @@ $font-xl: 30px;
   margin-top: 48px;
   padding: 16px;
 }
+
 .input {
   border-radius: 5px;
   border: 1px solid #CCD6D8;
@@ -47,6 +51,7 @@ $font-xl: 30px;
 .input::placeholder{
   color: $default-color-lighten;
 }
+
 .form-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -65,7 +70,7 @@ $font-xl: 30px;
     grid-template-columns: 1fr 121px;
     grid-template-areas:
             "a a"
-            "c c";
+            "b c";
   }
   .input-wrap--address {
     grid-area: a;
@@ -182,3 +187,4 @@ $font-xl: 30px;
   white-space: nowrap;
 }
 @import 'reset.css';
+@import 'suggestions.scss';

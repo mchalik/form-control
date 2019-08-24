@@ -14,16 +14,20 @@
     <form>
         <div class="form-wrap">
             <div class="input-wrap">
-                <label class="input-label">
-                    <span class="input-name">Фамилия Имя Отчество</span>
-                    <input type="text" name="fio" id="fio" class="input">
-                </label>
+                <div class="input-name">
+                    <label for="fio" class="input-label">
+                        Фамилия Имя Отчество
+                    </label>
+                </div>
+                <input type="text" name="fio" id="fio" class="input" autocomplete="off">
             </div>
             <div class="input-wrap">
-                <label class="input-label">
-                    <span class="input-name">Дата рождения</span>
-                    <input type="text" class="input">
-                </label>
+                <span class="input-name">
+                    <label for="birth_date" class="input-label">
+                        Дата рождения
+                    </label>
+                </span>
+                <input type="text" class="input" name="birth_date" id="birth_date">
             </div>
             <div class="input-wrap">
                 <div class="input-name">
@@ -47,10 +51,17 @@
                 <input type="text" name="passport_series_number" id="passport_series_number" class="input">
             </div>
             <div class="input-wrap">
-                <label class="input-label">
-                    <span class="input-name">Кем выдан</span>
-                    <input type="text" class="input" placeholder="Заполните точно как в паспорте">
-                </label>
+                <div class="input-name">
+                    <label for="passport_where_issued" class="input-label">
+                        Кем выдан
+                    </label>
+                </div>
+                <input type="text"
+                       class="input"
+                       name="passport_where_issued"
+                       id="passport_where_issued"
+                       placeholder="Заполните точно как в паспорте"
+                >
             </div>
             <div class="input-wrap">
                 <label class="input-label">
@@ -134,6 +145,7 @@
                 </div>
             </div>
         </div>
+        <button type="submit" class="step__button button button--outlined">Назад</button>
         <button type="submit" class="step__button button">Далее</button>
     </form>
 </section>

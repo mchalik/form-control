@@ -1,0 +1,21 @@
+.suggestions {
+  position: absolute;
+  top: calc(100% - 4px);
+  background-color: white;
+  z-index: 100;
+  width: 100%;
+
+
+  &__item {
+    border: 1px solid #979797;
+    padding: 5px 15px;
+    width: 100%;
+    font-size: 16px;
+    margin-top: -1px;
+
+    &:hover {
+      background-color: rgba($primary-color, .15);
+      cursor: pointer;
+    }
+  }
+}
