@@ -17,6 +17,12 @@ $font-xl: 30px;
   align-items: center;
 }
 
+@mixin focus{
+  box-shadow: 0 0 5px $primary-color-lighten;
+  border: 1px solid $primary-color-lighten;
+  outline: none;
+}
+
 .page {
   font-family: Graphik;
   font-size: $font-md;
@@ -30,6 +36,12 @@ $font-xl: 30px;
   padding: 16px;
 }
 
+.step-title {
+  display: inline-block;
+  border-bottom: 5px solid $primary-color;
+  padding-bottom: 2px;
+  margin-bottom: 30px;
+}
 .input {
   border-radius: 5px;
   border: 1px solid #CCD6D8;
@@ -42,11 +54,7 @@ $font-xl: 30px;
   width: 100%;
 }
 .input:focus {
-  box-shadow: 0 0 5px $primary-color-lighten;
-  border: 1px solid $primary-color-lighten;
-  border-radius: 5px;
-  outline: none;
-
+  @include focus();
 }
 .input::placeholder{
   color: $default-color-lighten;
@@ -58,35 +66,15 @@ $font-xl: 30px;
   flex-wrap: wrap;
   grid-gap: 30px 20px;
   margin-bottom: 40px;
-}
-.form-wrap--flexible {
-  grid-template-columns: 460px 220px 121px;
+
+  &--flexible {
+    grid-template-columns: 460px 220px 121px;
+  }
 }
 @media (max-width: 950px) {
   .form-wrap {
     grid-template-columns: 1fr;
   }
-  .form-wrap--flexible {
-    grid-template-columns: 1fr 121px;
-    grid-template-areas:
-            "a a"
-            "b c";
-  }
-  .input-wrap--address {
-    grid-area: a;
-  }
-  .input-wrap--price {
-    grid-area: b;
-  }
-  .input-wrap--price-caption {
-    grid-area: c;
-  }
-}
-.step-title {
-  display: inline-block;
-  border-bottom: 5px solid $primary-color;
-  padding-bottom: 2px;
-  margin-bottom: 30px;
 }
 .input-wrap {
   position: relative;
@@ -123,59 +111,12 @@ $font-xl: 30px;
   margin-left: auto;
   color: #fff;
 }
-.file-form-wrap__main {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.file-form-wrap__desc {
-  max-width: 440px;
-}
-.file-inputs-wrap {
-  max-width: 440px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 10px;
-}
-.file-label {
-  background: #FFFFFF;
-  border: 1px solid #5491F5;
-  border-radius: 5px;
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  color: #5491F5;
-  min-height: 60px;
-  display: inline-block;
-  padding: 4px;
-}
-.file-label:before {
-  content: '+';
-  display: block;
-  text-align: center;
-  font-size: $font-xl;
-  line-height: 30px
-}
-.file-form-wrap__caption {
-  margin-left: 20px;
-  width: 220px;
-}
 .form-wrap__caption {
   margin-top: auto;
 }
 .caption {
   font-size: $font-sm;
   line-height: 14px;
-}
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
 }
 .d-inline {
   display: inline-block;
@@ -188,3 +129,4 @@ $font-xl: 30px;
 }
 @import 'reset.css';
 @import 'suggestions.scss';
+@import 'file-input.scss';
